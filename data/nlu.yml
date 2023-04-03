@@ -1,0 +1,185 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: give_time
+  examples: |
+    - can you tell me what time it is
+    - tell me the time
+    - got the time
+    - what time is it
+- intent: ok
+  examples: |
+    - ok
+    - yes
+    - ya
+    - sure
+    - yes sure
+    - okay
+- intent: ask_reccomendation
+  examples: |
+    - please suggest me an outfit
+    - suggest outfit
+    - i need some suggestions for my attire
+    - can you please suggest me some accessories for [wedding](occasion)
+    - tell me what to wear in [gym](occasion)
+    - what scent should i wear for [datenight](occasion)
+    - what footwear would suit me best for [outing](occasion).
+    - what can i wear on my [party](occasion).
+    - suggest me an outfit
+- intent: check_order_status
+  examples: |
+    - where is my order?
+    - can you check my order status?
+    - what's the status of my order?
+    - when will my order arrive?
+- intent: cancel_order
+  examples: |
+    - I want to cancel my order
+    - can you cancel my order?
+    - cancel my order
+    - I changed my mind, cancel my order
+- intent: return_item
+  examples: |
+    - how can I return an item?
+    - can I return this item?
+    - what's your return policy?
+    - I want to return an item
+- intent: show_last_orders
+  examples: |
+    - show my last orders
+    - what are my recent orders?
+    - can you list my previous orders?
+- intent: specify_order_id
+  examples: |
+    - I want to cancel order with ID 12345
+    - cancel my order with order ID 67890
+- intent: tell_age
+  examples: |
+    - I am [21](age) years old
+    - [30](age)years
+    - [twenty](age)
+    - currently i am [40](age)
+    - [23](age)
+- intent: tell_occasion
+  examples: |
+    - I am attending a [bachelorrete party](occasion)
+    - [birthday party](occasion)
+    - [date night](occasion)
+    - [gym](occasion)
+    - [wedding](occasion)
+    - [party](occasion)
+- intent: tell_gender
+  examples: |
+    - I am a [female](gender)
+    - [male](gender)
+    - I am [transgender](gender)
+    - [female](gender)
+- intent: tell_bodytype
+  examples: |
+    - I have a [tall](bodytype) body
+    - i am [short](bodytype)
+    - [fit](bodytype)
+    - currently i am [xl](bodytype)
+- intent: tell_specifics
+  examples: |
+    - yeah [footwear](specifics)
+    - suggest me some [lingiere](specifics)
+    - [accessories] (specifics)
+    - [No] (specifics)
+    - [no](specifics)
+    - [footwear](specifics)
+- intent: tell_location
+  examples: |
+    - I live in [india](location)
+    - i am a resident of [USA](location)
+    - [dubai](location)
+    - my event(occasion) is in [New york](location)
+    - [usa](location)
+- intent: thank
+  examples: |
+    - thank you
+    - thanks
+    - thanks a lot
+    - thank you so much

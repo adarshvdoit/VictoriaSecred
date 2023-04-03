@@ -1,0 +1,148 @@
+version: '3.1'
+intents:
+- affirm
+- ask_reccomendation
+- bot_challenge
+- cancel_order
+- check_order_status
+- deny
+- give_time
+- goodbye
+- greet
+- mood_great
+- mood_unhappy
+- ok
+- return_item
+- show_last_orders
+- specify_order_id
+- tell_age
+- tell_bodytype
+- tell_gender
+- tell_location
+- tell_occasion
+- tell_specifics
+- thank
+entities:
+- gender
+- specifics
+- location
+- occasion
+- age
+- bodytype
+slots:
+  occasion:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: occasion
+      conditions:
+      - active_loop: rec_form
+  age:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: age
+      conditions:
+      - active_loop: rec_form
+  gender:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: gender
+      conditions:
+      - active_loop: rec_form
+  location:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: location
+      conditions:
+      - active_loop: rec_form
+  specifics:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: specifics
+      conditions:
+      - active_loop: rec_form
+  bodytype:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: bodytype
+      conditions:
+      - active_loop: rec_form
+forms:
+  rec_form:
+    required_slots:
+    - occasion
+    - age
+    - gender
+    - location
+    - specifics
+    - bodytype
+responses:
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_fallback:
+  - text: I dont understand this, taking response from chatgpt
+  utter_greet:
+  - text: Hello! How can I assist you today?
+  utter_check_order_status:
+  - text: Sure, I can check your order status. Please provide your order ID.
+  utter_cancel_order:
+  - text: Which order would you like to cancel? Please provide your order ID.
+  utter_return_item:
+  - text: Sure, you can return the item within 30 days of purchase. Please provide your order ID.
+  utter_show_last_orders:
+  - text: 'Here are your last 5 orders: [list of orders]. Please provide the order ID you want to cancel.'
+  utter_thank:
+  - text: You're welcome. Is there anything else I can help you with?
+  utter_ask_details:
+  - text: I would like to ask a few details before generating some reccomendations
+  utter_ask_occasion:
+  - text: Please tell me the occasion for your outfit
+  utter_ask_age:
+  - text: Please tell me your age
+  utter_ask_gender:
+  - text: Please tell me your gender
+  utter_ask_location:
+  - text: Please tell me loaction (country or city)
+  utter_ask_bodytype:
+  - text: 'Please tell me your bodytype (ex: tall, short, xl, etc)'
+  utter_ask_specifics:
+  - text: 'Please tell me the category you want the reccomendations for (for eg: lingiere, footwear, accessories)(write no if you want full outfit reccomendations.)'
+  utter_generating_rec:
+  - text: generating reccomendations powered by gpt
+  utter_goodbye:
+  - text: Goodbye! Have a nice day.
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- action_gpt_fallback
+#- action_send_alert_sms
+#- action_show_time
+- action_vs_rec
+- utter_cancel_order
+- utter_check_order_status
+- utter_generating_rec
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_return_item
+- utter_show_last_orders
+- utter_thank
